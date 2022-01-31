@@ -1,20 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
+import AlbumBox from './components/AlbumBox.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MainContent,
+    AlbumBox,
+  },
+  data () {
+    return {
+      album: [] 
+    }
+  },
+  mounted() {
+    axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response)  => {
+      this.personaggi = response.data
+    }) 
   }
 }
 </script>
+
+
+
 
 <style lang="scss">
 #app {
@@ -25,4 +40,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+@import './style/main.scss'
+
 </style>
