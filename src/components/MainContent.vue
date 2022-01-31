@@ -2,6 +2,7 @@
 <div>
      <album-box v-for="album in albumlist" 
     :key="album.title"
+    :album="album"
     /> 
 </div>
 
