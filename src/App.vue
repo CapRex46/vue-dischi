@@ -18,12 +18,12 @@ export default {
   },
   data () {
     return {
-      albums: [] 
+      albumlist: [] 
     }   
   },
   mounted() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response)  => {
-      this.album = response.data
+      this.albumlist = response.data.response
     }) 
   }
 }
