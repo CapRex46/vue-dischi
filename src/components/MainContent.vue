@@ -16,7 +16,7 @@ export default {
         AlbumBox
     },
     props: {
-        albumlists: Array
+        albumlist: Array
     }
 }
 </script>

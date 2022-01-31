@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="" alt="">
-        <span>{{albums.title}}</span>
+        <span>{{albumlist.title}}</span>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
 <script>
 export default {
     props: {
-        album: Object
+        albumlist: Object
     }
 }
 </script>
