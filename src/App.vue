@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <main-content />
+    <main-content :albumlist = "albumlist"/>
   </div>
 </template>
 
@@ -14,7 +14,6 @@ export default {
   name: 'App',
   components: {
     MainContent,
-
   },
   data () {
     return {

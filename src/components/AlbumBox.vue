@@ -1,7 +1,7 @@
 <template>
     <div>
         <img src="" alt="">
-        <span>{{albumlist.title}}</span>
+        <span>{{album.title}}</span>
     </div>
 </template>
 

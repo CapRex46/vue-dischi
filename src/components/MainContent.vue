@@ -1,7 +1,7 @@
 <template>
 <div>
-     <album-box v-for="albumlist in album" 
-    :key="albumlist.title"
+     <album-box v-for="album in albumlist" 
+    :key="album.title"
     /> 
 </div>
 
