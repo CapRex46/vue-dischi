@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-search @search="searchGenre"/>
-    <main-content :albumlist = "albumlist"/>
+    <header-search @filtro1="genfilter"/>
+    <main-content :albumlist = "albumfiltergen"/>
   </div>
 </template>
 
@@ -19,20 +19,28 @@ export default {
   },
   data () {
     return {
-      albumlist: [] 
+      albumlist: [] ,
+      albumfiltergen: [],
     }   
   },
   mounted() {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response)  => {
-      this.albumlist = response.data.response
+      this.albumlist = response.data.response;
+      this.albumfiltergen = response.data.response;
     }) 
   },
   methods: {
-    searchGenre(keyword) {
-      alert(keyword)
+    genfilter(searchTerm) {
+       if (searchTerm === 'All') {
+        this.albumfiltergen = this.albumlist;
+      } else {
+        this.albumfiltergen = this.albumlist.filter((album) => {
+          return album.genre.includes(searchTerm);
+        });
+      }
     }
   }
-};
+}
 </script>
 
 
