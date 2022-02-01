@@ -27,11 +27,11 @@ export default {
       this.albumlist = response.data.response
     }) 
   },
-  // methods: {
-  //   searchGenre(searchText){
-  //    this.albumlist = this.albumlist.filter("genre") 
-  //   }
-  // }
+  methods: {
+    searchGenre(keyword) {
+      alert(keyword)
+    }
+  }
 };
 </script>
 

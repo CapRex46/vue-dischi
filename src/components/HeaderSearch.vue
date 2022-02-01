@@ -1,10 +1,8 @@
 <template>
     <div>
-        <nav>
-            <select v-model="selected">
-                <option v-for="album in albumlist" :key="album.genre"></option>
-            </select>
-        </nav>
+        <select v-model="ketwordSearch">
+            <option $emit('search, ketwordSearch')></option>
+        </select>
     </div>
 </template>
 
@@ -17,8 +15,7 @@ export default {
     },
     data() {
         return {
-            selected: "",
-            albumlist: []       
+            keywordSearch: "",     
             };
     }
 }
