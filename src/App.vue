@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <header-search @search="searchGenre"/>
     <main-content :albumlist = "albumlist"/>
   </div>
 </template>
@@ -7,13 +8,14 @@
 <script>
 import axios from 'axios'
 import MainContent from './components/MainContent.vue'
-
+import HeaderSearch from './components/HeaderSearch.vue'
 
 
 export default {
   name: 'App',
   components: {
     MainContent,
+    HeaderSearch,
   },
   data () {
     return {
@@ -24,8 +26,13 @@ export default {
     axios.get('https://flynn.boolean.careers/exercises/api/array/music').then((response)  => {
       this.albumlist = response.data.response
     }) 
-  }
-}
+  },
+  // methods: {
+  //   searchGenre(searchText){
+  //    this.albumlist = this.albumlist.filter("genre") 
+  //   }
+  // }
+};
 </script>
 
 

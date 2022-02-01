@@ -7,6 +7,7 @@
                 <p>{{album.title}}</p>
                 <p>{{album.author}}</p>
                 <p>{{album.year}}</p>
+                <p>{{album.genre}}</p>
             </div>
 
         </div>
